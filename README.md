@@ -5,4 +5,4 @@ medical diagnosis bot
 dehydration
 
 ## Tutorial Status 
-finished lesson 5
+finished lesson 8
