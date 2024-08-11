@@ -8,12 +8,12 @@ welcome_prompt = """Welcome doctor, what would you like to do today?\n
 - To quit, press q\n"""
 
 name_prompt = "What is the patient's name?\n"
+
 appearance_prompt = "How is the patient's general appearance?\n - 1: Normal appearance\n - 2: Irritable or lethargic\n"
 
 def list_patients():
     print("Listing patients and diagnoses")
 
-# Try calling the 2 functions below according to the appearance_prompt input!
 def assess_skin():
     print("Assessing skin")
 
@@ -35,5 +35,6 @@ def main():
         elif selection == "q":
             # Exits the program
             return
-
+        else:
+            print("invalid response")
 main()
