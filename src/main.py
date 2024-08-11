@@ -7,24 +7,33 @@ welcome_prompt = """Welcome doctor, what would you like to do today?\n
 - To run a new diagnosis, press 2\n
 - To quit, press q\n"""
 
+name_prompt = "What is the patient's name?\n"
+appearance_prompt = "How is the patient's general appearance?\n - 1: Normal appearance\n - 2: Irritable or lethargic\n"
+
 def list_patients():
     print("Listing patients and diagnoses")
 
+# Try calling the 2 functions below according to the appearance_prompt input!
+def assess_skin():
+    print("Assessing skin")
+
+def assess_eyes():
+    print("Assessing eyes")
+
+
 def start_new_diagnosis():
-    print("Starting a new diagnosis")
+    patientName = input(name_prompt)
+    patientAppearance = input(appearance_prompt)
 
 def main():
-    selection = input(welcome_prompt)
-    # Using an if statement, we branch the code according to user selection:
-    if selection == "1":
-        # If 'selection' equals to 1, we're going to call the list_patients function
-        list_patients()
-    # Otherwise, if 'selection' equals to 2, we're going to call the start_new_diagnosis function
-    elif selection == "2":
-        start_new_diagnosis()
-    # And if 'selection' equals to q, we're going to simply quit the program
-    elif selection == "q":
-        return
+    while(True):
+        selection = input(welcome_prompt)
+        if selection == "1":
+            list_patients()
+        elif selection == "2":
+            start_new_diagnosis()
+        elif selection == "q":
+            # Exits the program
+            return
 
-# Starts the program execution
 main()
