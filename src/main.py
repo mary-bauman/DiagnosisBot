@@ -18,9 +18,11 @@ patientName = ""
 patients = dict()
 
 def list_patients():
-    patients["test"] = "testing"
-    for p in patients:
-        print(f"{p}: {patients[p]}")
+    # for p in patients:
+    #     print(f"{p}: {patients[p]}")
+    f = open("patients.txt", "r")
+    patients = f.readlines()
+    for p in patients: print(p)
 
 def assess_skin():
     while True:
@@ -62,6 +64,9 @@ def start_new_diagnosis():
     diagnosis = asses_appearance()
     patients[patientName] = diagnosis
     print(f"{patientName} has {diagnosis}")
+    f = open("patients.txt", "a")
+    f.write(f"\n{patientName}: {diagnosis}\n")
+    f.close()
 
 def main():
     while(True):
